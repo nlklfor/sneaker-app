@@ -8,7 +8,7 @@
 
 }
 
-.cart_wrapper {
+.cart_wrapper { 
 
     position: absolute;
     left: 0;
@@ -214,6 +214,8 @@ header {
 
     .favourite {
         position: absolute;
+        border: none;
+        cursor: pointer;
         
         img{
             border: 1px solid rgba(167, 167, 167, 0.527);
