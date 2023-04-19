@@ -1,4 +1,4 @@
-function Header() {
+function Header(props) {
     return (
         <header>
             <div className="header_info">
@@ -14,7 +14,7 @@ function Header() {
             </div>
             <ul className="header_profile">
                 <li className="header_profile-cart">
-                    <img src="/img/cart.svg" alt="Cart" width={20} height={20} />
+                    <img onClick={props.onClickOpen} src="/img/cart.svg" alt="Cart" width={20} height={20} />
                     <span> 200$</span>
                 </li>
                 <li className="header_profile-fav">

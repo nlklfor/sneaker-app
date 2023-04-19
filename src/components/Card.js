@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Card(props) {
     const [checked, setChecked] = useState(false)
@@ -12,6 +12,9 @@ function Card(props) {
     const onAddFav = () => {
         alert("You succesfully added " + props.name + " to your favourite list");
     }
+    // useEffect(() => {
+    //     console.log("Переменная изменилась!")
+    // },[unChecked])
     return (
         <div className='card'>
             <img className="favourite" onClick={onAddFav} src='/img/heart-unactive.svg' alt='Unactive' />

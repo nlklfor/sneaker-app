@@ -9,7 +9,6 @@
 }
 
 .cart_wrapper { 
-
     position: absolute;
     left: 0;
     top: 0;
@@ -182,6 +181,7 @@ header {
         margin-right: 40px;
 
         img {
+            cursor: pointer;
             margin-right: 10px;
         }
     }
@@ -269,8 +269,11 @@ header {
 
 .sneaker_list {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-left: 50px;
     margin-top: 30px;
+    margin-bottom: 70px;
+    
 }
 
 .search-block {

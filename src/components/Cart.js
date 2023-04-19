@@ -1,10 +1,12 @@
-function Cart() {
+
+
+function Cart(props) {
     return (
-        <div style={{ display: "none" }} className='cart_wrapper'>
+        <div className='cart_wrapper'>
             <div className='cart'>
                 <h3 className='cart_title'>
                     My purchases
-                    <img src='/img/cross.svg' alt='btn-remove'></img>
+                    <img onClick={props.onClickClose} src='/img/cross.svg' alt='btn-remove'></img>
                 </h3>
                 <div className='items'>
                     <div className='cart_item'>
