@@ -8,7 +8,7 @@
 
 }
 
-.cart_wrapper { 
+.cart_wrapper {
     position: absolute;
     overflow: hidden;
     left: 0;
@@ -28,18 +28,83 @@
         background: #FFFFFF;
         box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
 
+        .cart_empty-wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 auto;
+
+            .cart_empty-img {}
+
+            .cart_empty-title {
+                font-size: 22px;
+                font-weight: 600;
+
+            }
+
+            .cart_empty-desc {
+                font-size: 16px;
+                line-height: 24px;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.438);
+
+            }
+
+            .cart_empty-btn {
+                border: none;
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+                padding: 15px 80px;
+                background: #9DD558;
+                border-radius: 18px;
+                border: none;
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                color: #FFFFFF;
+                transition: .3s all;
+                cursor: pointer;
+
+                &:hover {
+                    background: #87b949;
+                    transition: .3s all;
+                    box-shadow: 10px 4px 24px rgba(0, 0, 0, 0.1);
+
+                    img {
+                        transform: translateX(-10px);
+                        transition: .3s all;
+                    }
+                }
+
+                &:active {
+                    background-color: darken(#9DD558, 5%);
+                }
+
+                img {
+                    transition: .3s all;
+                    margin-right: 10px;
+                }
+
+            }
+        }
+
         .cart_title {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            img{
+
+            img {
                 cursor: pointer;
             }
         }
-        .items{
+
+        .items {
             overflow: auto;
         }
+
         .cart_item {
             display: flex;
             justify-content: space-between;
@@ -76,10 +141,9 @@
             }
 
         }
-        .cart_block{
-        
 
-        }
+        .cart_block {}
+
         .cart_total {
             display: flex;
             flex-direction: column;
@@ -107,6 +171,7 @@
                 flex-direction: column;
                 align-items: center;
                 margin-top: 40px;
+
                 button {
                     display: flex;
                     align-items: center;
@@ -121,20 +186,23 @@
                     color: #FFFFFF;
                     transition: .3s all;
                     cursor: pointer;
-                    
-                    &:hover{
+
+                    &:hover {
                         background: #87b949;
                         transition: .3s all;
                         box-shadow: 10px 4px 24px rgba(0, 0, 0, 0.1);
-                        img{
+
+                        img {
                             transform: translateX(10px);
                             transition: .3s all;
                         }
                     }
-                    &:active{
-                        background-color: darken( #9DD558, 5%);
+
+                    &:active {
+                        background-color: darken(#9DD558, 5%);
                     }
-                    img{
+
+                    img {
                         position: relative;
                         left: 50px;
                         transition: .3s all;
@@ -222,11 +290,11 @@ header {
         position: absolute;
         border: none;
         cursor: pointer;
-        
-        img{
+
+        img {
             border: 1px solid rgba(167, 167, 167, 0.527);
             border-radius: 10px;
-            
+
         }
 
     }
@@ -279,7 +347,7 @@ header {
     margin-left: 50px;
     margin-top: 30px;
     margin-bottom: 70px;
-    
+
 }
 
 .search-block {
@@ -296,9 +364,11 @@ header {
         padding-top: 5px;
         padding-bottom: 5px;
     }
+
     .clear {
         cursor: pointer;
     }
+
     img {
 
         margin-left: 10px;

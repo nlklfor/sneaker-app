@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Card({ name, img, price, onPlus }) {
     const [isAdded, setIsAdded] = useState(false)
@@ -6,7 +6,7 @@ function Card({ name, img, price, onPlus }) {
 
     const onAddCart = () => {
         onPlus({ name, img, price });
-        setIsAdded(!isAdded); {/*! означает что переменная может быть инвертирована т.е при нажатии менять своё внутреннее значение в противоположном направлении*/ }
+        setIsAdded(!isAdded); /*! означает что переменная может быть инвертирована т.е при нажатии менять своё внутреннее значение в противоположном направлении*/ 
     }
     const onAddFav = () => {
         alert("You succesfully added " + name + " to your favourite list");

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 import './App.scss';
 import Card from "./components/Card"
 import Cart from "./components/Cart"
@@ -12,19 +13,27 @@ function App(props) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('https://6426e372556bad2a5b5a9478.mockapi.io/items').then((res) => {
-      return res.json();
-    }).then(json => {
-      setItems(json);
+    // fetch('https://6426e372556bad2a5b5a9478.mockapi.io/items').then((res) => {
+    //   return res.json();
+    // }).then(json => {
+    //   setItems(json);
+    // })
+    axios.get('https://6426e372556bad2a5b5a9478.mockapi.io/items').then(res => {
+      setItems(res.data);
+    })
+    axios.get('https://6426e372556bad2a5b5a9478.mockapi.io/cart').then(res => {
+      setCartItems(res.data);
     })
   }, [])
 
   const onAddToCart = (obj) => {
+    axios.post('https://6426e372556bad2a5b5a9478.mockapi.io/cart', obj)
     setCartItems([...cartItems, obj]);
   };
 
-  const onDeleteFromCart = (name) => {
-    setCartItems([cartItems.filter(obj => obj.name !== name)])
+  const onDeleteFromCart = (id) => {
+    axios.delete(`https://6426e372556bad2a5b5a9478.mockapi.io/cart/${id}`)
+    setCartItems(cartItems.filter(obj => obj.id !== id))
   }
 
   const onChangeInputValue = (event) => {
@@ -36,10 +45,10 @@ function App(props) {
 
   return (
     <div className="app_wrapper">
-      {cartOpened && <Cart items={cartItems} onClickClose={() => setCartOpened(false)} onMinus={(obj) => onDeleteFromCart(obj)} />} {/* <---- Условный рендеринг */} {/* && - тернарный оператор, если слевастоящий аругмент будет TRUE, тогда выполняется правая часть , если же FALSE, тогда правая часть не выполняется!!! */}
+      {cartOpened && <Cart items={cartItems} onClickClose={() => setCartOpened(false)} onRemove={onDeleteFromCart} />} {/* <---- Условный рендеринг */} {/* && - тернарный оператор, если слевастоящий аругмент будет TRUE, тогда выполняется правая часть , если же FALSE, тогда правая часть не выполняется!!! */}
       <Header onClickOpen={() => setCartOpened(true)} />
       <div className="content">
-        <Search searchItem={searchItem} setSearchItem={setSearchItem} onChangeInputValue={onChangeInputValue} onClickClear={onClickClear}/>
+        <Search searchItem={searchItem} setSearchItem={setSearchItem} onChangeInputValue={onChangeInputValue} onClickClear={onClickClear} />
         <div className='sneaker_list'>
           {items.filter((obj) => obj.name.toLowerCase().includes(searchItem)).map((obj) => {
             return (
