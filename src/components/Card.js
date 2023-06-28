@@ -16,9 +16,10 @@ function Card({ name, img, price, onPlus }) {
     //     console.log("Переменная изменилась!")
     // },[unChecked])
     return (
+        
         <div className='card'>
-            <img className="favourite" onClick={onAddFav} src={isFav ? "/img/heart-active.svg" : "/img/heart-unactive.svg"} alt='Unactive' />
-            <img src={img} alt='Nike' width={133} height={112} />
+            <img className="favourite" onClick={onAddFav} src={isFav ? "/img/heart-active.svg" : "/img/heart-unactive.svg"} alt='Favoutire' />
+            <img src={img} alt='shoe' width={133} height={112} />
             <p className='card_desc'>
                 Men shoes <br />
                 {name}

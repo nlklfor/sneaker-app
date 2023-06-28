@@ -9,7 +9,6 @@ function Cart({ onClickClose, onRemove, items = [] }) {
                 </h3>
                 {items.length > 0 ?
                     <div className="cart_ordered">
-
                         <div className='items'>
                             {items.map((obj) => (
                                 <div className='cart_item'>
