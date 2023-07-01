@@ -1,15 +1,15 @@
 import { useState } from "react";
 
-function Card({ name, img, price, onPlus }) {
+function Card({id, name, img, price, onPlus, onFav, Favourite = false }) {
     const [isAdded, setIsAdded] = useState(false)
-    const [isFav, setIsFav] = useState(false)
+    const [isFav, setIsFav] = useState(Favourite)
 
     const onAddCart = () => {
         onPlus({ name, img, price });
         setIsAdded(!isAdded); /*! означает что переменная может быть инвертирована т.е при нажатии менять своё внутреннее значение в противоположном направлении*/ 
     }
     const onAddFav = () => {
-        alert("You succesfully added " + name + " to your favourite list");
+        onFav({id, name , img , price});
         setIsFav(!isFav);
     }
     // useEffect(() => {
