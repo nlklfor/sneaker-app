@@ -1,4 +1,6 @@
-function Cart({ onClickClose, onRemove, items = [] }) {
+
+
+function Cart({ onClickClose, onRemove, items = [], onMakeAnOrder }) {
     return (
 
         <div className='cart_wrapper'>
@@ -37,7 +39,7 @@ function Cart({ onClickClose, onRemove, items = [] }) {
                                     <b>7.5 $</b>
                                 </li>
                                 <div className='cart_total-button'>
-                                    <button>
+                                    <button onClick={onMakeAnOrder}>
                                         Make an order
                                         <img src='/img/arrow.svg' alt='arrow'></img>
                                     </button>
@@ -51,7 +53,7 @@ function Cart({ onClickClose, onRemove, items = [] }) {
                         <img className="cart_empty-image" src="/img/emptyCart.png" alt="empty"></img>
                         <h2 className="cart_empty-title"> Your cart is empty</h2>
                         <p className="cart_empty-desc">Add at least one pair of shoes to your cart</p>
-                        <button className="cart_empty-btn"> <img src='/img/back-arrow.svg' alt='arrow'></img> Back</button>
+                       <button className="cart_empty-btn" onClick={onClickClose}> <img src='/img/back-arrow.svg' alt='arrow'></img> Back</button>
                     </div>
                 }
 

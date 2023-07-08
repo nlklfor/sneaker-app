@@ -3,19 +3,21 @@ import { Link } from "react-router-dom";
 function Header(props) {
     return (
         <header>
-            <Link>
-                <div className="header_info">
+
+            <div className="header_info">
+                <Link to="/">
                     <img src="/img/logo.png" alt="Logo" className="header_info-logo" width={50} height={50} />
-                    <div className="header">
-                        <h3 className="header_title">
-                            REACT SNEAKERS
-                        </h3>
-                        <p className="header_subtitle">
-                            Beast sneaker shop
-                        </p>
-                    </div>
+                </Link>
+                <div className="header">
+                    <h3 className="header_title">
+                        REACT SNEAKERS
+                    </h3>
+                    <p className="header_subtitle">
+                        Beast sneaker shop
+                    </p>
                 </div>
-            </Link>
+            </div>
+
             <ul className="header_profile">
                 <li className="header_profile-cart">
                     <img onClick={props.onClickOpen} src="/img/cart.svg" alt="Cart" width={20} height={20} />
@@ -26,7 +28,7 @@ function Header(props) {
 
                 </li>
                 <li className="header_profile-acc">
-                    <Link to="/profile"><img src="/img/profile.svg" alt="Profile" width={20} height={20} /></Link>
+                    <Link to="/orders"><img src="/img/profile.svg" alt="Profile" width={20} height={20} /></Link>
                 </li>
             </ul>
         </header>
