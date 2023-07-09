@@ -9,6 +9,7 @@ function Cart({ onClickClose, onRemove, items = [], onMakeAnOrder }) {
                     My Cart
                     <img onClick={onClickClose} src='/img/cross.svg' alt='btn-remove'></img>
                 </h3>
+                
                 {items.length > 0 ?
                     <div className="cart_ordered">
                         <div className='items'>
@@ -31,12 +32,12 @@ function Cart({ onClickClose, onRemove, items = [], onMakeAnOrder }) {
                                 <li className='cart_total-item'>
                                     <span>Total</span>
                                     <div></div>
-                                    <b>160 $</b>
+                                    <b>1$</b>
                                 </li>
                                 <li className='cart_total-item'>
                                     <span>Taxes 5%:</span>
                                     <div></div>
-                                    <b>7.5 $</b>
+                                    <b>2$</b>
                                 </li>
                                 <div className='cart_total-button'>
                                     <button onClick={onMakeAnOrder}>
@@ -55,6 +56,7 @@ function Cart({ onClickClose, onRemove, items = [], onMakeAnOrder }) {
                         <p className="cart_empty-desc">Add at least one pair of shoes to your cart</p>
                        <button className="cart_empty-btn" onClick={onClickClose}> <img src='/img/back-arrow.svg' alt='arrow'></img> Back</button>
                     </div>
+                    
                 }
 
                 {/* <---- Условный рендеринг */} {/* && - тернарный оператор, если слевастоящий аругмент будет TRUE, тогда выполняется правая часть , если же FALSE, тогда правая часть не выполняется!!! */}

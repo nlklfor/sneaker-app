@@ -61,7 +61,9 @@ function App() {
   }
   const onMakeAnOrder = (obj) => {
     // axios.post(`https://6426e372556bad2a5b5a9478.mockapi.io/ordered/`, obj);
-    setOrderedItems([orderedItems.push(...cartItems, obj)]);
+    // setOrderedItems([orderedItems.push(...cartItems)]);
+    console.log(cartItems)
+    setOrderedItems(cartItems);
     console.log(orderedItems)
   }
   const router = createBrowserRouter(
@@ -69,7 +71,7 @@ function App() {
       <Route path='/' element={<Root cartItems={cartItems} onDeleteFromCart={onDeleteFromCart} onMakeAnOrder={onMakeAnOrder} setOrderedItems={setOrderedItems} />} >
         <Route index element={<Home items={items} searchItem={searchItem} setSearchItem={setSearchItem} onChangeInputValue={onChangeInputValue} onClickClear={onClickClear} onAddToCart={onAddToCart} onAddToFav={onAddToFav} />} />
         <Route path='/fav-list' element={<Favourite key={items.name} items={favItems} onAddToFav={onAddToFav} />} />
-        <Route path='/orders' element={<Orders/>}/>
+        <Route path='/orders' element={<Orders orderedItems = {orderedItems}/>}/>
       </Route>
     )
   )

@@ -12,7 +12,7 @@ function Root({ cartItems, onDeleteFromCart, onMakeAnOrder}) {
     return (
         <>
             <div className="app_wrapper">
-                {cartOpened && <Cart items={cartItems} onClickClose={() => setCartOpened(false)} onRemove={onDeleteFromCart} onMakeAnOrder={onMakeAnOrder} />} {/* <---- Условный рендеринг */} {/* && - тернарный оператор, если слевастоящий аругмент будет TRUE, тогда выполняется правая часть , если же FALSE, тогда правая часть не выполняется!!! */}
+                {cartOpened && <Cart items={cartItems} onClickClose={() => setCartOpened(false)} onRemove={onDeleteFromCart} onMakeAnOrder={(obj) => onMakeAnOrder(obj)} />} {/* <---- Условный рендеринг */} {/* && - тернарный оператор, если слевастоящий аругмент будет TRUE, тогда выполняется правая часть , если же FALSE, тогда правая часть не выполняется!!! */}
                 <Header onClickOpen={() => setCartOpened(true)} />
                 <div className="outlet_routes">
                     <Outlet />
