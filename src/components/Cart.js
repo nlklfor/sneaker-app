@@ -32,7 +32,7 @@ function Cart({ onClickClose, onRemove, items = [], onMakeAnOrder }) {
                                 <li className='cart_total-item'>
                                     <span>Total</span>
                                     <div></div>
-                                    <b>1$</b>
+                                    <b>{items[0].price}</b>
                                 </li>
                                 <li className='cart_total-item'>
                                     <span>Taxes 5%:</span>

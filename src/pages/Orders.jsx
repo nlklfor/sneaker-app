@@ -1,13 +1,13 @@
-function Orders(props) {
-    console.log(props.orderedItems);
+function Orders({orderedItems}) {
+    console.log(orderedItems);
     return (
         <div className="order_wrapper">
             <div className="my-orders">
                 <h1 className="orders_title">My orders</h1>
-                {props.orderedItems.length > 0 ?
+                {orderedItems.length > 0 ?
                     <div className="cart_ordered">
                         <div className='items'>
-                            {props.orderedItems.map((obj) => (
+                            {orderedItems.map((obj) => (
                                 <div className='cart_item'>
                                     <img src={obj.img} alt='Nike' width={133} height={112} />
                                     <div className='card_info'>

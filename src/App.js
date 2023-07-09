@@ -59,12 +59,9 @@ function App() {
   const onClickClear = () => {
     setSearchItem('');
   }
-  const onMakeAnOrder = (obj) => {
+  const onMakeAnOrder = () => {
     // axios.post(`https://6426e372556bad2a5b5a9478.mockapi.io/ordered/`, obj);
-    // setOrderedItems([orderedItems.push(...cartItems)]);
-    console.log(cartItems)
     setOrderedItems(cartItems);
-    console.log(orderedItems)
   }
   const router = createBrowserRouter(
     createRoutesFromElements(
