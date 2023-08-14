@@ -1,5 +1,5 @@
 function Orders({orderedItems}) {
-    console.log(orderedItems);
+
     return (
         <div className="order_wrapper">
             <div className="my-orders">
